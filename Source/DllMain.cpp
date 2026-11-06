@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "WolfEngine.h"
 
+// Anchor export for static PE import table injection (IAT patching)
+extern "C" __declspec(dllexport) void WolfEntry()
+{
+}
+
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
     switch (fdwReason)

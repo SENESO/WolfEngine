@@ -1,3 +1,4 @@
 LIBRARY "WolfEngine"
 EXPORTS
     _DllMain@12 = DllMain
+    WolfEntry   = DllMain

@@ -16,8 +16,8 @@ bool Environment::Initialize()
     size_t lastSlash = m_processPath.find_last_of("\\/");
     std::string fileName = (lastSlash != std::string::npos) ? m_processPath.substr(lastSlash + 1) : m_processPath;
 
-    // Enforce that target process MUST be Conquer.exe
-    if (_stricmp(fileName.c_str(), "Conquer.exe") != 0)
+    // Enforce that target process MUST be Conquer.exe (or variant like Conquer_Fixed.exe)
+    if (_strnicmp(fileName.c_str(), "Conquer", 7) != 0)
     {
         MessageBoxA(NULL, "This engine can only be loaded by Conquer.exe", "WolfEngine Error", MB_ICONERROR);
         ExitProcess(0);
