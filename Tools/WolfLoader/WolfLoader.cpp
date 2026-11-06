@@ -50,16 +50,20 @@ int main(int argc, char* argv[])
     char fullDllPath[MAX_PATH] = { 0 };
     GetFullPathNameA(dllPath.c_str(), MAX_PATH, fullDllPath, NULL);
 
-    std::cout << "Launching: " << conquerPath << "\n";
+    std::cout << "Launching: " << conquerPath << " blacknull\n";
     std::cout << "Injecting: " << fullDllPath << "\n";
+
+    // Conquer.exe requires "blacknull" argument to bypass "Please run Play.exe file."
+    char cmdLine[MAX_PATH * 2] = { 0 };
+    snprintf(cmdLine, sizeof(cmdLine), "\"%s\" blacknull", conquerPath.c_str());
 
     STARTUPINFOA si = { sizeof(si) };
     PROCESS_INFORMATION pi = { 0 };
 
-    // Launch Conquer.exe in suspended state
+    // Launch Conquer.exe in suspended state with blacknull parameter
     BOOL success = CreateProcessA(
-        conquerPath.c_str(),
         NULL,
+        cmdLine,
         NULL,
         NULL,
         FALSE,
