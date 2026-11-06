@@ -25,3 +25,4 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     MessageBoxA(NULL, "Failed to launch Conquer.exe from Env_DX9 / Env_DX8.", "Launch Error", MB_ICONERROR);
     return 1;
 }
+

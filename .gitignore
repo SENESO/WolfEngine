@@ -25,3 +25,8 @@ bin/Release/*.exp
 bin/Release/*.lib
 bin/Release/*.pdb
 
+
+# Game binaries & backups
+Conquer.exe*
+*.bak
+/WolfEngine.dll
