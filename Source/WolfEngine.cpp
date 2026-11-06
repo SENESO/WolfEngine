@@ -23,7 +23,7 @@ bool WolfEngine::Initialize(HMODULE hModule)
         return false;
 
     // 2. Apply initial memory patch (5 NOPs on x????xxxxxxxxxx)
-    uintptr_t patchAddr = HookManager::Instance().PatternScan(NULL, "\xE8\x00\x00\x00\x00\x85\xC0", "x????xx");
+    uintptr_t patchAddr = HookManager::Instance().PatternScan(NULL, "\xE8\x00\x00\x00\x00\x83\xC4\x0C\x83\x4D\xFC\xFF\xFF\x75\x0C", "x????xxxxxxxxxx");
     if (patchAddr)
     {
         HookManager::Instance().NopMemory(patchAddr, 5);

@@ -97,6 +97,8 @@
     <ClInclude Include="Include\AntiCheat.h" />
     <ClInclude Include="Include\DiscordRPC.h" />
     <ClInclude Include="Include\Environment.h" />
+    <ClInclude Include="Include\detours.h" />
+    <ClInclude Include="Include\detver.h" />
     <ClInclude Include="Include\FileIntegrity.h" />
     <ClInclude Include="Include\framework.h" />
     <ClInclude Include="Include\GraphicHook.h" />
@@ -114,6 +116,15 @@
     <ClInclude Include="Include\WolfEngine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\detours.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\disasm.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\modules.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Source\DiscordRPC.cpp" />
     <ClCompile Include="Source\DllMain.cpp" />
     <ClCompile Include="Source\Environment.cpp" />

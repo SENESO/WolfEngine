@@ -4,15 +4,17 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable: 4996)
 
-#include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#include <windows.h>
 #include <tlhelp32.h>
 #include <wtsapi32.h>
 #include <iphlpapi.h>
 #include <shellapi.h>
 #include <wincrypt.h>
 #include <psapi.h>
+
+#include "detours.h"
 
 #include <string>
 #include <vector>

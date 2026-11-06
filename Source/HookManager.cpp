@@ -81,14 +81,26 @@ bool HookManager::CreateJmpHook(uintptr_t source, uintptr_t destination, size_t 
 
 bool HookManager::AttachHook(PVOID* ppPointer, PVOID pDetour)
 {
-    // Simple inline hook implementation fallback
-    uintptr_t orig = (uintptr_t)*ppPointer;
-    if (!orig) return false;
-    return CreateJmpHook(orig, (uintptr_t)pDetour, 5);
+    if (!ppPointer || !*ppPointer || !pDetour)
+        return false;
+
+    DetourTransactionBegin();
+    DetourUpdateThread(GetCurrentThread());
+    LONG status = DetourAttach(ppPointer, pDetour);
+    DetourTransactionCommit();
+
+    return (status == NO_ERROR);
 }
 
 bool HookManager::DetachHook(PVOID* ppPointer, PVOID pDetour)
 {
-    return true;
-}
+    if (!ppPointer || !*ppPointer || !pDetour)
+        return false;
 
+    DetourTransactionBegin();
+    DetourUpdateThread(GetCurrentThread());
+    LONG status = DetourDetach(ppPointer, pDetour);
+    DetourTransactionCommit();
+
+    return (status == NO_ERROR);
+}
