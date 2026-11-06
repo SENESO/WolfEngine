@@ -1,0 +1,19 @@
+CompileFlags:
+  Add:
+    - "-m32"
+    - "-std=c++17"
+    - "-fms-extensions"
+    - "-fms-compatibility"
+    - "-fms-compatibility-version=19.40"
+    - "-DWIN32"
+    - "-D_WINDOWS"
+    - "-D_USRDLL"
+    - "-D_CRT_SECURE_NO_WARNINGS"
+    - "-Id:/ProgramData/WolfEngine/Include"
+    - "-Id:/ProgramData/WolfEngine/Source"
+    - "-isystemC:/Program Files/Microsoft Visual Studio/18/Enterprise/VC/Tools/MSVC/14.51.36231/include"
+    - "-isystemC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt"
+    - "-isystemC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared"
+    - "-isystemC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um"
+    - "-isystemC:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt"
+

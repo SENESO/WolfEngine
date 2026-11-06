@@ -1,0 +1,26 @@
+# Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build intermediate files
+obj/
+*.obj
+*.tlog
+*.lastbuildstate
+*.log
+*.iobj
+*.ipdb
+*.ilk
+*.idb
+*.pdb
+
+# Debug binaries
+bin/Debug/
+
+# Release auxiliary build outputs
+bin/Release/*.exp
+bin/Release/*.lib
+bin/Release/*.pdb
